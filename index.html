@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <title>The RGB Game</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>The RGB Game</h1>
+            <h2>Can you guess the color based off the RGB value?</h2>
+            <label class="switch">
+                <input type="checkbox" id="hardMode" onclick="changeMode()">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div id ="rgbContainer">
+            <span id="rgbContent">
+                <span id="rgbVal"></span>
+                <br><br>
+                <span id="result" class="resultAnim"></span>
+            </span>
+            <!--
+            <div id="rgbVal"></div>
+            <div id="result"></div>
+            -->
+        </div>
+        
+        <div id="choices">
+            <button id="0" type="button" onclick="checkRGB(this.id)"></button>
+            <button id="1" type="button" onclick="checkRGB(this.id)"></button>
+            <button id="2" type="button" onclick="checkRGB(this.id)"></button>
+        
+
+            <div id="choicesHard">
+                <button id="3" type="button" onclick="checkRGB(this.id)"></button>
+                <button id="4" type="button" onclick="checkRGB(this.id)"></button>
+                <button id="5" type="button" onclick="checkRGB(this.id)"></button>
+            </div>
+
+        </div>
+
+    </body>
+</html>
