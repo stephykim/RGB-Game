@@ -52,8 +52,10 @@ function checkRGB(buttonId) {
     }
     else {
         result.textContent = "Sorry, wrong answer";
+        
     }
 
+    correctAnswerAnim(listOfRGB.indexOf(a));
     dim_fast_shine_slow();
 
     setTimeout(function() {
@@ -70,4 +72,15 @@ function dim_fast_shine_slow()
     setTimeout(function(){
         result.className = 'resultAnim';
     }, 1000);   // 1 second  
+}
+
+function correctAnswerAnim(correctBtn) {
+    var btn = document.getElementById(correctBtn);
+
+    btn.classList.remove("blinker");
+    //setTimeout(() => btn.classList.add("blinker"), 0);
+    setTimeout(function() {
+        btn.classList.add("blinker");
+    }, 0);
+    btn.classList.remove("blinker");
 }

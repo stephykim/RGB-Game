@@ -1,11 +1,8 @@
-html {
-    font-family: 'Titillium Web', sans-serif;
-}
-
 body {
     margin: 0;
     padding: 0;
     color: black;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 h1 {
@@ -16,7 +13,8 @@ h1 {
     text-align: center;
     background: rgb(97, 105, 114);
     width: 100%;
-    padding: 2.5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: white;
 }
 
@@ -97,7 +95,7 @@ input:checked + .slider:after
     font-weight: bold;
  }
  
- span {
+span {
      display: inline-block;
      vertical-align: middle;
      line-height: 20px;
@@ -121,7 +119,7 @@ button {
 }
 
 .resultAnim {
-    -webkit-transition: opacity 1s;
+ -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
       -o-transition: opacity 1s;
          transition: opacity 1s;
@@ -130,4 +128,60 @@ button {
 
 .dim_fast {
     opacity: 1;
+}
+
+.blinker {
+-webkit-animation: boxShadow 1s linear infinite;
+   -moz-animation: boxShadow 1s linear infinite;
+    -ms-animation: boxShadow 1s linear infinite;
+     -o-animation: boxShadow 1s linear infinite;
+        animation: boxShadow .75s linear 2;
+}
+
+@keyframes boxShadow {
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+}
+@-webkit-keyframes boxShadow {
+    25% {
+        box-shadow: 0 0 5px 5px grey;
+    }
+    75% {
+        box-shadow: 0 0 0 0 transparent;
+    }
+}
+
+@media (max-width: 450px) {
+    #header {
+      background: rgb(54, 89, 129);
+    }
+    h1 {
+        margin-top: 0;
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 20px;
+        margin: 10px;
+    }
+    #rgbContainer {
+        text-align: center;
+        font-weight: bold;
+        
+     }
+     
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 20px;
+        font-size: 20px;
+     }
+     
+     button {
+        border: none;
+        outline: none;
+        max-width: 90px;
+        max-height: 90px;
+        margin: 5px;
+     }
 }
