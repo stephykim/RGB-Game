@@ -2,10 +2,19 @@ var a;
 var hardMode = false;
 var k;
 var listOfRGB = [];
+var score=0;
 
 window.onload  = function() {
     setRGB(hardMode);
+    setScore(score);
 }
+
+/* FUTURE CODE FOR SCORE TABLE
+function askMode() {
+    if (confirm("Changing modes will reset your score to 0. Do you wish to continue?"))
+        changeMode();
+}
+*/
 
 function setRGB(mode) {
     if(mode) {
@@ -48,11 +57,15 @@ function changeMode() {
 function checkRGB(buttonId) {
     var result = document.getElementById('result');
     if (listOfRGB[buttonId].toString() == a.toString()) {
-        result.textContent = "Winner winner chicken dinner!";
+        result.textContent = "Winner winner!";
+        setScore(score+=1);
     }
     else {
         result.textContent = "Sorry, wrong answer";
-        
+        if (score != 0) {
+            score = 0;
+            setScore(score);
+        }
     }
 
     correctAnswerAnim(listOfRGB.indexOf(a));
@@ -77,10 +90,14 @@ function dim_fast_shine_slow()
 function correctAnswerAnim(correctBtn) {
     var btn = document.getElementById(correctBtn);
 
-    btn.classList.remove("blinker");
-    //setTimeout(() => btn.classList.add("blinker"), 0);
-    setTimeout(function() {
-        btn.classList.add("blinker");
-    }, 0);
-    btn.classList.remove("blinker");
+    btn.classList.add("blinker");
+
+    setTimeout(function(){
+        btn.classList.remove("blinker");
+    }, 2000);
+}
+
+function setScore(num) {
+    var scoreOutput = document.getElementById('score');
+    scoreOutput.textContent = "SCORE: "+num;
 }
